@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Kasyno Koło Fortuny",
+  "pageDescription": "Spróbuj szczęścia! Zakreć kołem fortuny i wygrywaj nagrody każdego dnia. Bez depozytu, bez ryzyka!",
+  "subtitle": "Zakreć turbo kołem i wygraj prawdziwe bonusy bez depozytu!",
+  "freeSpin": "DARMOWY SPIN",
+  "winBonus": "WYGRAJ BONUS BEZ DEPOZYTU",
+  "spinButton": "ZAKRĘĆ KOŁEM",
+  "congratulations": "🎉 GRATULACJE! 🎉",
+  "youWon": "Wygrałeś",
+  "promocode": "Kod promocyjny",
+  "nextSpinIn": "Następny spin za",
+  "alreadySpun": "Już kręciłeś! Wróć za godzinę!",
+  "comeBackInHour": "Wróć za godzinę po kolejną szansę na wygraną!",
+  "copyResult": "Kopiuj wynik",
+  "goToCasino": "Przejdź do kasyna",
+  "support": "Wsparcie",
+  "soundOn": "Dźwięk włączony",
+  "soundOff": "Dźwięk wyłączony",
+  "loading": "Ładowanie...",
+  "error": "Coś poszło nie tak. Spróbuj ponownie.",
+  "copied": "Skopiowano do schowka!",
+  "wheelSectors": {
+    "25": "Bonus 25$",
+    "50": "Bonus 50$",
+    "100": "Bonus 100$",
+    "250": "Bonus 250$",
+    "500": "Bonus 500$",
+    "1000": "Bonus 1000$"
+  },
+  "chat": {
+    "title": "Czat wsparcia",
+    "placeholder": "Wpisz swoją wiadomość...",
+    "send": "Wyślij",
+    "connecting": "Łączenie...",
+    "connected": "Połączono",
+    "disconnected": "Rozłączono"
+  },
+  "close": "Zamknij"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Kod promocyjny skopiowany do schowka!"
+} 
+

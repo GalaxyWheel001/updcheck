@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Casino Gulong ng Kapalaran",
+  "pageDescription": "Subukan ang inyong swerte! Paikutin ang gulong ng kapalaran at manalo ng premyo araw-araw. Walang deposit, walang panganib!",
+  "subtitle": "Paikutin ang turbo wheel at manalo ng totoong no-deposit bonus!",
+  "freeSpin": "LIBRENG IKOT",
+  "winBonus": "MANALO NG NO-DEPOSIT BONUS",
+  "spinButton": "PAIKUTIN ANG WHEEL",
+  "congratulations": "🎉 BINABATI KITA! 🎉",
+  "youWon": "Nanalo ka",
+  "promocode": "Promo code",
+  "nextSpinIn": "Susunod na ikot sa",
+  "alreadySpun": "Nakapag-ikot ka na! Bumalik ka sa isang oras!",
+  "comeBackInHour": "Bumalik ka sa isang oras para sa isa pang pagkakataon na manalo!",
+  "copyResult": "Kopyahin ang resulta",
+  "goToCasino": "Pumunta sa Casino",
+  "support": "Suporta",
+  "soundOn": "Tunog naka-on",
+  "soundOff": "Tunog naka-off",
+  "loading": "Naglo-load...",
+  "error": "May nangyaring mali. Pakisubukang muli.",
+  "copied": "Nakopya sa clipboard!",
+  "wheelSectors": {
+    "25": "₱25 Bonus",
+    "50": "₱50 Bonus",
+    "100": "₱100 Bonus",
+    "250": "₱250 Bonus",
+    "500": "₱500 Bonus",
+    "1000": "₱1000 Bonus"
+  },
+  "chat": {
+    "title": "Support Chat",
+    "placeholder": "I-type ang iyong mensahe...",
+    "send": "Ipadala",
+    "connecting": "Kumokonekta...",
+    "connected": "Nakakonekta",
+    "disconnected": "Nakakalas"
+  },
+  "close": "Isara"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Kinopya ang promocode sa clipboard!"
+} 
+

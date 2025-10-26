@@ -1,0 +1,42 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Casino Roda da Fortuna",
+  "pageDescription": "Teste sua sorte! Gire a roda da fortuna e ganhe prêmios todos os dias. Sem depósito, sem risco!",
+  "subtitle": "Gire a roda turbo e ganhe bônus reais sem depósito!",
+  "freeSpin": "GIRO GRÁTIS",
+  "winBonus": "GANHE BÔNUS SEM DEPÓSITO",
+  "spinButton": "GIRAR A RODA",
+  "congratulations": "🎉 PARABÉNS! 🎉",
+  "youWon": "Você ganhou",
+  "promocode": "Código promocional",
+  "nextSpinIn": "Próximo giro em",
+  "alreadySpun": "Já rodaste! Volta daqui a uma hora!",
+  "comeBackInHour": "Volta daqui a uma hora para outra oportunidade de ganhar!",
+  "copyResult": "Copiar resultado",
+  "goToCasino": "Ir para o Cassino",
+  "support": "Suporte",
+  "soundOn": "Som ativado",
+  "soundOff": "Som desativado",
+  "loading": "Carregando...",
+  "error": "Algo deu errado. Por favor, tente novamente.",
+  "copied": "Copiado para a área de transferência!",
+  "wheelSectors": {
+    "25": "$25 Bônus",
+    "50": "$50 Bônus",
+    "100": "$100 Bônus",
+    "250": "$250 Bônus",
+    "500": "$500 Bônus",
+    "1000": "$1000 Bônus"
+  },
+  "chat": {
+    "title": "Chat de Suporte",
+    "placeholder": "Digite sua mensagem...",
+    "send": "Enviar",
+    "connecting": "Conectando...",
+    "connected": "Conectado",
+    "disconnected": "Desconectado"
+  },
+  "close": "Fechar",
+  "promocodeCopied": "Copied!",
+  "promocodeCopiedToClipboard": "Código promocional copiado para a área de transferência!"
+}

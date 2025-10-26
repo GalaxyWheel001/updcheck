@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Casino Ruota della Fortuna",
+  "pageDescription": "Prova la tua fortuna! Gira la ruota della fortuna e vinci premi ogni giorno. Senza deposito, senza rischi!",
+  "subtitle": "Gira la ruota turbo e vinci veri bonus senza deposito!",
+  "freeSpin": "GIRO GRATIS",
+  "winBonus": "VINCI BONUS SENZA DEPOSITO",
+  "spinButton": "GIRA LA RUOTA",
+  "congratulations": "🎉 CONGRATULAZIONI! 🎉",
+  "youWon": "Hai vinto",
+  "promocode": "Codice promozionale",
+  "nextSpinIn": "Prossimo giro tra",
+  "alreadySpun": "Hai già girato! Torna tra un'ora!",
+  "comeBackInHour": "Torna tra un'ora per un'altra possibilità di vincere!",
+  "copyResult": "Copia risultato",
+  "goToCasino": "Vai al Casino",
+  "support": "Supporto",
+  "soundOn": "Audio attivo",
+  "soundOff": "Audio disattivato",
+  "loading": "Caricamento...",
+  "error": "Qualcosa è andato storto. Riprova.",
+  "copied": "Copiato negli appunti!",
+  "wheelSectors": {
+    "25": "$25 Bonus",
+    "50": "$50 Bonus",
+    "100": "$100 Bonus",
+    "250": "$250 Bonus",
+    "500": "$500 Bonus",
+    "1000": "$1000 Bonus"
+  },
+  "chat": {
+    "title": "Chat di supporto",
+    "placeholder": "Scrivi il tuo messaggio...",
+    "send": "Invia",
+    "connecting": "Connessione...",
+    "connected": "Connesso",
+    "disconnected": "Disconnesso"
+  },
+  "close": "Chiudi"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Codice promozionale copiato negli appunti!"
+} 
+

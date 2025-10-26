@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Kaszinó Szerencsekerék",
+  "pageDescription": "Próbáld ki a szerencsédet! Forgasd meg a szerencsekeréket és nyerj napi díjakat. Befizetés nélkül, kockázat nélkül!",
+  "subtitle": "Forgasd meg a turbo kereket és nyerj valódi befizetés nélküli bónuszokat!",
+  "freeSpin": "INGYENES PÖRGETÉS",
+  "winBonus": "NYERJ BEFIZETÉS NÉLKÜLI BÓNUSZT",
+  "spinButton": "KERÉK FORGATÁSA",
+  "congratulations": "🎉 GRATULÁLUNK! 🎉",
+  "youWon": "Nyertél",
+  "promocode": "Promóciós kód",
+  "nextSpinIn": "Következő pörgetés:",
+  "alreadySpun": "Már pörgettél! Gyere vissza egy óra múlva!",
+  "comeBackInHour": "Gyere vissza egy óra múlva egy másik nyerési lehetőségért!",
+  "copyResult": "Eredmény másolása",
+  "goToCasino": "Menj a kaszinóba",
+  "support": "Támogatás",
+  "soundOn": "Hang bekapcsolva",
+  "soundOff": "Hang kikapcsolva",
+  "loading": "Betöltés...",
+  "error": "Valami hiba történt. Kérlek, próbáld újra.",
+  "copied": "Vágólapra másolva!",
+  "wheelSectors": {
+    "25": "25$ Bónusz",
+    "50": "50$ Bónusz",
+    "100": "100$ Bónusz",
+    "250": "250$ Bónusz",
+    "500": "500$ Bónusz",
+    "1000": "1000$ Bónusz"
+  },
+  "chat": {
+    "title": "Támogatási chat",
+    "placeholder": "Írd be az üzeneted...",
+    "send": "Küldés",
+    "connecting": "Csatlakozás...",
+    "connected": "Csatlakozva",
+    "disconnected": "Szétkapcsolva"
+  },
+  "close": "Bezárás"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Promóciós kód a vágólapra másolva!"
+} 
+

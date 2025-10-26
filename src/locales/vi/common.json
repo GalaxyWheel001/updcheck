@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Casino Bánh Xe May Mắn",
+  "pageDescription": "Thử vận may của bạn! Quay bánh xe may mắn và giành giải thưởng mỗi ngày. Không cần gửi tiền, không có rủi ro!",
+  "subtitle": "Quay bánh xe turbo và giành phần thưởng thực không cần gửi tiền!",
+  "freeSpin": "QUAY MIỄN PHÍ",
+  "winBonus": "NHẬN THƯỞNG KHÔNG CẦN GỬI TIỀN",
+  "spinButton": "QUAY BÁNH XE",
+  "congratulations": "🎉 CHÚC MỪNG! 🎉",
+  "youWon": "Bạn đã thắng",
+  "promocode": "Mã khuyến mãi",
+  "nextSpinIn": "Lần quay tiếp theo trong",
+  "alreadySpun": "Bạn đã quay rồi! Quay lại sau một giờ!",
+  "comeBackInHour": "Quay lại sau một giờ để có cơ hội thắng khác!",
+  "copyResult": "Sao chép kết quả",
+  "goToCasino": "Đến Casino",
+  "support": "Hỗ trợ",
+  "soundOn": "Âm thanh bật",
+  "soundOff": "Âm thanh tắt",
+  "loading": "Đang tải...",
+  "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+  "copied": "Đã sao chép vào clipboard!",
+  "wheelSectors": {
+    "25": "Thưởng 25$",
+    "50": "Thưởng 50$",
+    "100": "Thưởng 100$",
+    "250": "Thưởng 250$",
+    "500": "Thưởng 500$",
+    "1000": "Thưởng 1000$"
+  },
+  "chat": {
+    "title": "Trò chuyện hỗ trợ",
+    "placeholder": "Nhập tin nhắn của bạn...",
+    "send": "Gửi",
+    "connecting": "Đang kết nối...",
+    "connected": "Đã kết nối",
+    "disconnected": "Đã ngắt kết nối"
+  },
+  "close": "Đóng"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Đã sao chép mã khuyến mãi vào khay nhớ tạm!"
+} 
+

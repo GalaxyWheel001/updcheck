@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Casino Roue de la Fortune",
+  "pageDescription": "Tentez votre chance ! Tournez la roue de la fortune et gagnez des prix tous les jours. Sans dépôt, sans risque !",
+  "subtitle": "Tournez la roue turbo et gagnez de vrais bonus sans dépôt !",
+  "freeSpin": "TOUR GRATUIT",
+  "winBonus": "GAGNEZ UN BONUS SANS DÉPÔT",
+  "spinButton": "TOURNER LA ROUE",
+  "congratulations": "🎉 FÉLICITATIONS ! 🎉",
+  "youWon": "Vous avez gagné",
+  "promocode": "Code promotionnel",
+  "nextSpinIn": "Prochain tour dans",
+  "alreadySpun": "Vous avez déjà tourné ! Revenez dans une heure !",
+  "comeBackInHour": "Revenez dans une heure pour une autre chance de gagner !",
+  "copyResult": "Copier le résultat",
+  "goToCasino": "Aller au casino",
+  "support": "Support",
+  "soundOn": "Son activé",
+  "soundOff": "Son désactivé",
+  "loading": "Chargement...",
+  "error": "Une erreur s'est produite. Veuillez réessayer.",
+  "copied": "Copié dans le presse-papiers !",
+  "wheelSectors": {
+    "25": "Bonus de 25 $",
+    "50": "Bonus de 50 $",
+    "100": "Bonus de 100 $",
+    "250": "Bonus de 250 $",
+    "500": "Bonus de 500 $",
+    "1000": "Bonus de 1000 $"
+  },
+  "chat": {
+    "title": "Chat de support",
+    "placeholder": "Écrivez votre message...",
+    "send": "Envoyer",
+    "connecting": "Connexion...",
+    "connected": "Connecté",
+    "disconnected": "Déconnecté"
+  },
+  "close": "Fermer"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Code promo copié dans le presse-papiers !"
+} 
+

@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Cazino Roata Norocului",
+  "pageDescription": "Încearcă-ți norocul! Învârte roata norocului și câștigă premii în fiecare zi. Fără depunere, fără risc!",
+  "subtitle": "Învârte roata turbo și câștigă bonusuri reale fără depunere!",
+  "freeSpin": "ROTIRE GRATUITĂ",
+  "winBonus": "CÂȘTIGĂ BONUS FĂRĂ DEPUNERE",
+  "spinButton": "ÎNVÂRTE ROATA",
+  "congratulations": "🎉 FELICITĂRI! 🎉",
+  "youWon": "Ai câștigat",
+  "promocode": "Cod promoțional",
+  "nextSpinIn": "Următoarea rotire în",
+  "alreadySpun": "Ai rotit deja! Revino într-o oră!",
+  "comeBackInHour": "Revino într-o oră pentru o altă șansă de a câștiga!",
+  "copyResult": "Copiază rezultatul",
+  "goToCasino": "Mergi la Casino",
+  "support": "Suport",
+  "soundOn": "Sunet pornit",
+  "soundOff": "Sunet oprit",
+  "loading": "Se încarcă...",
+  "error": "Ceva nu a mers bine. Te rugăm să încerci din nou.",
+  "copied": "Copiat în clipboard!",
+  "wheelSectors": {
+    "25": "25$ Bonus",
+    "50": "50$ Bonus",
+    "100": "100$ Bonus",
+    "250": "250$ Bonus",
+    "500": "500$ Bonus",
+    "1000": "1000$ Bonus"
+  },
+  "chat": {
+    "title": "Chat Suport",
+    "placeholder": "Scrie mesajul tău...",
+    "send": "Trimite",
+    "connecting": "Se conectează...",
+    "connected": "Conectat",
+    "disconnected": "Deconectat"
+  },
+  "close": "Închide"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Codul promoțional a fost copiat în clipboard!"
+} 
+

@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Kasino Kolo Štěstí",
+  "pageDescription": "Zkuste své štěstí! Roztočte kolo štěstí a vyhrajte ceny každý den. Bez vkladu, bez rizika!",
+  "subtitle": "Roztočte turbo kolo a vyhrajte skutečné bonusy bez vkladu!",
+  "freeSpin": "ZDARMA SPIN",
+  "winBonus": "VYHRAJTE BONUS BEZ VKLADU",
+  "spinButton": "ROZTOČIT KOLO",
+  "congratulations": "🎉 GRATULUJEME! 🎉",
+  "youWon": "Vyhráli jste",
+  "promocode": "Promokód",
+  "nextSpinIn": "Další spin za",
+  "alreadySpun": "Už jste točili! Vraťte se za hodinu!",
+  "comeBackInHour": "Vraťte se za hodinu pro další šanci na výhru!",
+  "copyResult": "Kopírovat výsledek",
+  "goToCasino": "Jít do kasina",
+  "support": "Podpora",
+  "soundOn": "Zvuk zapnutý",
+  "soundOff": "Zvuk vypnutý",
+  "loading": "Načítání...",
+  "error": "Něco se pokazilo. Zkuste to prosím znovu.",
+  "copied": "Zkopírováno do schránky!",
+  "wheelSectors": {
+    "25": "Bonus 25$",
+    "50": "Bonus 50$",
+    "100": "Bonus 100$",
+    "250": "Bonus 250$",
+    "500": "Bonus 500$",
+    "1000": "Bonus 1000$"
+  },
+  "chat": {
+    "title": "Chat podpory",
+    "placeholder": "Napište svou zprávu...",
+    "send": "Odeslat",
+    "connecting": "Připojování...",
+    "connected": "Připojeno",
+    "disconnected": "Odpojeno"
+  },
+  "close": "Zavřít"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Propagační kód byl zkopírován do schránky!"
+} 
+

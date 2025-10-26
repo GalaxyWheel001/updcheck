@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Kasino Roda Keberuntungan",
+  "pageDescription": "Coba keberuntunganmu! Putar roda keberuntungan dan menangkan hadiah setiap hari. Tanpa deposit, tanpa risiko!",
+  "subtitle": "Putar roda turbo dan menangkan bonus nyata tanpa deposit!",
+  "freeSpin": "PUTARAN GRATIS",
+  "winBonus": "MENANGKAN BONUS TANPA DEPOSIT",
+  "spinButton": "PUTAR RODA",
+  "congratulations": "🎉 SELAMAT! 🎉",
+  "youWon": "Anda menang",
+  "promocode": "Kode promo",
+  "nextSpinIn": "Putaran berikutnya dalam",
+  "alreadySpun": "Anda sudah memutar! Kembali dalam satu jam!",
+  "comeBackInHour": "Kembali dalam satu jam untuk kesempatan lain untuk menang!",
+  "copyResult": "Salin hasil",
+  "goToCasino": "Pergi ke Kasino",
+  "support": "Dukungan",
+  "soundOn": "Suara aktif",
+  "soundOff": "Suara nonaktif",
+  "loading": "Memuat...",
+  "error": "Terjadi kesalahan. Silakan coba lagi.",
+  "copied": "Disalin ke clipboard!",
+  "wheelSectors": {
+    "25": "Bonus 25$",
+    "50": "Bonus 50$",
+    "100": "Bonus 100$",
+    "250": "Bonus 250$",
+    "500": "Bonus 500$",
+    "1000": "Bonus 1000$"
+  },
+  "chat": {
+    "title": "Obrolan Dukungan",
+    "placeholder": "Ketik pesan Anda...",
+    "send": "Kirim",
+    "connecting": "Menghubungkan...",
+    "connected": "Terhubung",
+    "disconnected": "Terputus"
+  },
+  "close": "Tutup"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Kode promo disalin ke clipboard!"
+} 
+

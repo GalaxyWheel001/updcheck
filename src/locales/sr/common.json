@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Казино Точак Среће",
+  "pageDescription": "Испробај своју срећу! Заврти точак среће и освајај награде сваког дана. Без депозита, без ризика!",
+  "subtitle": "Zavrti turbo točak i osvoji prave bonuse bez depozita!",
+  "freeSpin": "BESPLATNO OKRETANJE",
+  "winBonus": "OSVOJI BONUS BEZ DEPOZITA",
+  "spinButton": "ZAVRTI TOČAK",
+  "congratulations": "🎉 ČESTITAMO! 🎉",
+  "youWon": "Osvojili ste",
+  "promocode": "Promo kod",
+  "nextSpinIn": "Sledeće okretanje za",
+  "alreadySpun": "Већ сте окретали! Вратите се за сат времена!",
+  "comeBackInHour": "Вратите се за сат времена за још једну прилику за добитак!",
+  "copyResult": "Kopiraj rezultat",
+  "goToCasino": "Idi u kazino",
+  "support": "Podrška",
+  "soundOn": "Zvuk uključen",
+  "soundOff": "Zvuk isključen",
+  "loading": "Učitavanje...",
+  "error": "Nešto nije u redu. Pokušajte ponovo.",
+  "copied": "Kopirano u klipbord!",
+  "wheelSectors": {
+    "25": "25$ Bonus",
+    "50": "50$ Bonus",
+    "100": "100$ Bonus",
+    "250": "250$ Bonus",
+    "500": "500$ Bonus",
+    "1000": "1000$ Bonus"
+  },
+  "chat": {
+    "title": "Chat podrške",
+    "placeholder": "Unesite vašu poruku...",
+    "send": "Pošalji",
+    "connecting": "Povezivanje...",
+    "connected": "Povezano",
+    "disconnected": "Prekinuto"
+  },
+  "close": "Zatvori"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Промотивни код је копиран у клипборд!"
+} 
+

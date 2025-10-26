@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Casino Rad van Fortuin",
+  "pageDescription": "Probeer je geluk! Draai aan het rad van fortuin en win elke dag prijzen. Geen storting, geen risico!",
+  "subtitle": "Draai aan het turbo wiel en win echte no-deposit bonussen!",
+  "freeSpin": "GRATIS SPIN",
+  "winBonus": "WIN NO-DEPOSIT BONUS",
+  "spinButton": "DRAAI HET WIEL",
+  "congratulations": "🎉 GEFELICITEERD! 🎉",
+  "youWon": "Je hebt gewonnen",
+  "promocode": "Promocode",
+  "nextSpinIn": "Volgende spin over",
+  "alreadySpun": "Je hebt al gedraaid! Kom over een uur terug!",
+  "comeBackInHour": "Kom over een uur terug voor nog een kans om te winnen!",
+  "copyResult": "Resultaat kopiëren",
+  "goToCasino": "Ga naar Casino",
+  "support": "Support",
+  "soundOn": "Geluid aan",
+  "soundOff": "Geluid uit",
+  "loading": "Laden...",
+  "error": "Er is iets misgegaan. Probeer het opnieuw.",
+  "copied": "Gekopieerd naar klembord!",
+  "wheelSectors": {
+    "25": "€25 Bonus",
+    "50": "€50 Bonus",
+    "100": "€100 Bonus",
+    "250": "€250 Bonus",
+    "500": "€500 Bonus",
+    "1000": "€1000 Bonus"
+  },
+  "chat": {
+    "title": "Support Chat",
+    "placeholder": "Typ je bericht...",
+    "send": "Verzenden",
+    "connecting": "Verbinden...",
+    "connected": "Verbonden",
+    "disconnected": "Verbinding verbroken"
+  },
+  "close": "Sluiten"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Promotiecode gekopieerd naar klembord!"
+} 
+

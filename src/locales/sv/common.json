@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Casino Lyckohjul",
+  "pageDescription": "Testa din tur! Snurra lyckohjulet och vinn priser varje dag. Ingen insättning, ingen risk!",
+  "subtitle": "Snurra det turbo hjulet och vinn riktiga bonusar utan insättning!",
+  "freeSpin": "GRATISSPINN",
+  "winBonus": "VINN BONUS UTAN INSÄTTNING",
+  "spinButton": "SNURRA HJULET",
+  "congratulations": "🎉 GRATULERAR! 🎉",
+  "youWon": "Du vann",
+  "promocode": "Kampanjkod",
+  "nextSpinIn": "Nästa snurr om",
+  "alreadySpun": "Du har redan snurrat! Kom tillbaka om en timme!",
+  "comeBackInHour": "Kom tillbaka om en timme för en annan chans att vinna!",
+  "copyResult": "Kopiera resultat",
+  "goToCasino": "Gå till Casino",
+  "support": "Support",
+  "soundOn": "Ljud på",
+  "soundOff": "Ljud av",
+  "loading": "Laddar...",
+  "error": "Något gick fel. Försök igen.",
+  "copied": "Kopierat till urklipp!",
+  "wheelSectors": {
+    "25": "25 kr Bonus",
+    "50": "50 kr Bonus",
+    "100": "100 kr Bonus",
+    "250": "250 kr Bonus",
+    "500": "500 kr Bonus",
+    "1000": "1000 kr Bonus"
+  },
+  "chat": {
+    "title": "Supportchatt",
+    "placeholder": "Skriv ditt meddelande...",
+    "send": "Skicka",
+    "connecting": "Ansluter...",
+    "connected": "Ansluten",
+    "disconnected": "Frånkopplad"
+  },
+  "close": "Stäng"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Kampanjkod kopierad till urklipp!"
+} 
+

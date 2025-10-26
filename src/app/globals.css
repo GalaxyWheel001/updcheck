@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 94.1%;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.orbitron {
+  font-family: 'Orbitron', monospace;
+}
+
+
+
+/* Clean modern animations */
+
+@keyframes drift {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+/* Neon Effects */
+.neon-glow {
+  box-shadow:
+    0 0 5px rgba(78, 205, 196, 0.8),
+    0 0 10px rgba(78, 205, 196, 0.6),
+    0 0 15px rgba(78, 205, 196, 0.4),
+    0 0 20px rgba(78, 205, 196, 0.3),
+    0 0 35px rgba(78, 205, 196, 0.2);
+}
+
+.neon-text {
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(78, 205, 196, 0.6),
+    0 0 15px rgba(78, 205, 196, 0.4),
+    0 0 20px rgba(78, 205, 196, 0.2);
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow:
+      0 0 10px rgba(78, 205, 196, 0.4),
+      0 0 20px rgba(78, 205, 196, 0.3),
+      0 0 30px rgba(78, 205, 196, 0.2);
+  }
+  to {
+    box-shadow:
+      0 0 20px rgba(78, 205, 196, 0.6),
+      0 0 30px rgba(78, 205, 196, 0.4),
+      0 0 40px rgba(78, 205, 196, 0.3);
+  }
+}
+
+/* Enhanced Button Glow */
+.super-glow {
+  animation: super-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes super-glow {
+  from {
+    box-shadow:
+      0 0 20px rgba(6, 182, 212, 0.8),
+      0 0 40px rgba(6, 182, 212, 0.6),
+      0 0 60px rgba(6, 182, 212, 0.4),
+      0 0 80px rgba(6, 182, 212, 0.2);
+    transform: scale(1);
+  }
+  to {
+    box-shadow:
+      0 0 30px rgba(6, 182, 212, 1),
+      0 0 50px rgba(6, 182, 212, 0.8),
+      0 0 70px rgba(6, 182, 212, 0.6),
+      0 0 90px rgba(6, 182, 212, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+/* Wheel Container */
+/* Wheel container - removed perspective and transform-style to eliminate invisible square */
+
+.wheel {
+  transform-origin: center;
+  transition: transform 4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Particle Effects */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Floating Elements */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Aviation Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00, #FF6347);
+  background-size: 300% 300%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .clouds {
+    background-size: 150px 75px;
+  }
+
+  .avia-bg {
+    background-attachment: fixed;
+  }
+}
+
+/* Aviation Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1) translateY(0); opacity: 0.6; }
+  50% { transform: scale(1.08) translateY(-10px); opacity: 0.85; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 12s ease-in-out infinite;
+}
+
+@keyframes ship-float {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-8deg) scale(1.04); }
+  20% { transform: translate(-48%, -52%) rotate(-4deg) scale(1.07); }
+  50% { transform: translate(-50%, -54%) rotate(0deg) scale(1.1); }
+  80% { transform: translate(-52%, -52%) rotate(4deg) scale(1.07); }
+}
+.animate-ship-float {
+  animation: ship-float 10s ease-in-out infinite;
+}
+
+@keyframes blackhole-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-blackhole-spin {
+  animation: blackhole-spin 18s linear infinite;
+}
+
+@keyframes quasar-flash {
+  0%, 100% { opacity: 0.7; }
+  10% { opacity: 1; }
+  20% { opacity: 0.7; }
+  50% { opacity: 0.9; }
+  60% { opacity: 1; }
+  70% { opacity: 0.7; }
+}
+.animate-quasar-flash {
+  animation: quasar-flash 7s ease-in-out infinite;
+}
+
+@keyframes meteor-move {
+  0% { opacity: 0; left: 60%; top: 70%; }
+  10% { opacity: 1; }
+  80% { opacity: 1; left: 20%; top: 40%; }
+  100% { opacity: 0; left: 10%; top: 30%; }
+}
+.animate-meteor-move {
+  animation: meteor-move 8s linear infinite;
+}
+
+@keyframes comet-move {
+  0% { opacity: 0; left: 80%; top: 30%; }
+  10% { opacity: 1; }
+  80% { opacity: 1; left: 40%; top: 60%; }
+  100% { opacity: 0; left: 20%; top: 80%; }
+}
+.animate-comet-move {
+  animation: comet-move 14s linear infinite;
+}
+
+@keyframes planet-float {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.04) translateY(-12px); }
+}
+.animate-planet-float {
+  animation: planet-float 18s ease-in-out infinite;
+}
+
+@keyframes flare-flash {
+  0%, 100% { opacity: 0.7; }
+  20% { opacity: 1; }
+  40% { opacity: 0.7; }
+  60% { opacity: 1; }
+  80% { opacity: 0.7; }
+}
+.animate-flare-flash {
+  animation: flare-flash 9s ease-in-out infinite;
+}
+
+@keyframes tmn1 { 0%,100%{transform:scale(1) translateY(0);} 50%{transform:scale(1.08) translateY(-10px);} }
+.animate-tmn1{animation:tmn1 18s ease-in-out infinite;}
+@keyframes tmn2 { 0%,100%{transform:scale(1) translateY(0);} 50%{transform:scale(1.04) translateY(-12px);} }
+.animate-tmn2{animation:tmn2 22s ease-in-out infinite;}
+@keyframes tmn3 { 0%,100%{transform:scale(1) translateY(0);} 50%{transform:scale(1.06) translateY(8px);} }
+.animate-tmn3{animation:tmn3 26s ease-in-out infinite;}
+@keyframes tmn4 { 0%,100%{transform:scale(1) translateY(0);} 50%{transform:scale(1.03) translateY(-6px);} }
+.animate-tmn4{animation:tmn4 20s ease-in-out infinite;}
+@keyframes tmn5 { 0%,100%{transform:scale(1) translateY(0);} 50%{transform:scale(1.05) translateY(10px);} }
+.animate-tmn5{animation:tmn5 24s ease-in-out infinite;}
+@keyframes arc1 { 0%,100%{transform:rotate(-8deg) scale(1);} 50%{transform:rotate(8deg) scale(1.04);} }
+.animate-arc1{animation:arc1 30s ease-in-out infinite;}
+@keyframes arc2 { 0%,100%{transform:rotate(0deg) scale(1);} 50%{transform:rotate(12deg) scale(1.07);} }
+.animate-arc2{animation:arc2 36s ease-in-out infinite;}
+@keyframes luxcloud1 { 0%,100%{transform:scale(1) translateY(0);} 50%{transform:scale(1.04) translateY(-8px);} }
+.animate-luxcloud1{animation:luxcloud1 32s ease-in-out infinite;}
+@keyframes luxcloud2 { 0%,100%{transform:scale(1) translateY(0);} 50%{transform:scale(1.03) translateY(6px);} }
+.animate-luxcloud2{animation:luxcloud2 38s ease-in-out infinite;}
+@keyframes luxcloud3 { 0%,100%{transform:scale(1) translateY(0);} 50%{transform:scale(1.06) translateY(-10px);} }
+.animate-luxcloud3{animation:luxcloud3 44s ease-in-out infinite;}
+@keyframes luxstar1 { 0%,100%{transform:scale(1);} 50%{transform:scale(1.08);} }
+.animate-luxstar1{animation:luxstar1 18s ease-in-out infinite;}
+@keyframes luxstar2 { 0%,100%{transform:scale(1);} 50%{transform:scale(1.06);} }
+.animate-luxstar2{animation:luxstar2 22s ease-in-out infinite;}
+@keyframes luxstar3 { 0%,100%{transform:scale(1);} 50%{transform:scale(1.04);} }
+.animate-luxstar3{animation:luxstar3 26s ease-in-out infinite;}
+
+/* Radial Gradient Utility */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* AviaMasters Animations */
+@keyframes fly {
+  0% {
+    transform: translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateX(50vw) scale(1.1);
+  }
+  100% {
+    transform: translateX(calc(100vw + 300px)) scale(0.9);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateX(50vw) scale(1.05);
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px)) scale(0.95);
+  }
+}
+
+@keyframes takeoff {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(200px, 0) rotate(0deg) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(350px, -50px) rotate(-10deg) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(600px, -200px) rotate(-15deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Enhanced animations for better performance */
+@keyframes float-enhanced {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.6; 
+  }
+  25% { 
+    transform: translateY(-8px) rotate(1deg); 
+    opacity: 0.8; 
+  }
+  50% { 
+    transform: translateY(-15px) rotate(0deg); 
+    opacity: 1; 
+  }
+  75% { 
+    transform: translateY(-8px) rotate(-1deg); 
+    opacity: 0.8; 
+  }
+}
+
+@keyframes pulse-enhanced {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.7; 
+  }
+  50% { 
+    transform: scale(1.05); 
+    opacity: 1; 
+  }
+}
+
+@keyframes drift-enhanced {
+  0% {
+    transform: translateX(0px) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateX(25vw) rotate(2deg) scale(1.05);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(50vw) rotate(0deg) scale(1.1);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(75vw) rotate(-2deg) scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(100vw) rotate(0deg) scale(0.95);
+    opacity: 0.6;
+  }
+}
+
+.animate-float-enhanced {
+  animation: float-enhanced 8s ease-in-out infinite;
+}
+
+.animate-pulse-enhanced {
+  animation: pulse-enhanced 3s ease-in-out infinite;
+}
+
+.animate-drift-enhanced {
+  animation: drift-enhanced 20s linear infinite;
+}

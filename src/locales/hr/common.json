@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Kasino Kotač Sreće",
+  "pageDescription": "Isprobaj svoju sreću! Zavrti kotač sreće i osvoji nagrade svaki dan. Bez depozita, bez rizika!",
+  "subtitle": "Zavrti turbo kotač i osvoji prave bonuse bez depozita!",
+  "freeSpin": "BESPLATNO OKRETANJE",
+  "winBonus": "OSVOJI BONUS BEZ DEPOZITA",
+  "spinButton": "ZAVRTI KOTAČ",
+  "congratulations": "🎉 ČESTITAMO! 🎉",
+  "youWon": "Osvojili ste",
+  "promocode": "Promo kod",
+  "nextSpinIn": "Sljedeće okretanje za",
+  "alreadySpun": "Već ste okretali! Vratite se za sat vremena!",
+  "comeBackInHour": "Vratite se za sat vremena za još jednu priliku za dobitak!",
+  "copyResult": "Kopiraj rezultat",
+  "goToCasino": "Idi u kasino",
+  "support": "Podrška",
+  "soundOn": "Zvuk uključen",
+  "soundOff": "Zvuk isključen",
+  "loading": "Učitavanje...",
+  "error": "Nešto nije u redu. Pokušajte ponovno.",
+  "copied": "Kopirano u međuspremnik!",
+  "wheelSectors": {
+    "25": "25$ Bonus",
+    "50": "50$ Bonus",
+    "100": "100$ Bonus",
+    "250": "250$ Bonus",
+    "500": "500$ Bonus",
+    "1000": "1000$ Bonus"
+  },
+  "chat": {
+    "title": "Chat podrške",
+    "placeholder": "Unesite svoju poruku...",
+    "send": "Pošalji",
+    "connecting": "Povezivanje...",
+    "connected": "Povezano",
+    "disconnected": "Prekinuto"
+  },
+  "close": "Zatvori"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Promotivni kod je kopiran u međuspremnik!"
+} 
+

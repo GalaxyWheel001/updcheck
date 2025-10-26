@@ -1,0 +1,45 @@
+{
+  "title": "TURBO WHEEL",
+  "pageTitle": "TurboPlay — Casino Şans Çarkı",
+  "pageDescription": "Şansını dene! Şans çarkını çevir ve her gün ödüller kazan. Yatırım yok, risk yok!",
+  "subtitle": "Turbo çarkı çevir ve gerçek yatırımsız bonuslar kazan!",
+  "freeSpin": "ÜCRETSİZ DÖNDÜRME",
+  "winBonus": "YATIRIMSIZ BONUS KAZAN",
+  "spinButton": "ÇARKI ÇEVİR",
+  "congratulations": "🎉 TEBRİKLER! 🎉",
+  "youWon": "Kazandınız",
+  "promocode": "Promosyon Kodu",
+  "nextSpinIn": "Sonraki döndürme:",
+  "alreadySpun": "Zaten döndürdünüz! Bir saat sonra geri gelin!",
+  "comeBackInHour": "Kazanmak için başka bir şans için bir saat sonra geri gelin!",
+  "copyResult": "Sonucu kopyala",
+  "goToCasino": "Kasino'ya Git",
+  "support": "Destek",
+  "soundOn": "Ses Açık",
+  "soundOff": "Ses Kapalı",
+  "loading": "Yükleniyor...",
+  "error": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin.",
+  "copied": "Panoya kopyalandı!",
+  "wheelSectors": {
+    "25": "$25 Bonus",
+    "50": "$50 Bonus",
+    "100": "$100 Bonus",
+    "250": "$250 Bonus",
+    "500": "$500 Bonus",
+    "1000": "$1000 Bonus"
+  },
+  "chat": {
+    "title": "Destek Sohbeti",
+    "placeholder": "Mesajınızı yazın...",
+    "send": "Gönder",
+    "connecting": "Bağlanıyor...",
+    "connected": "Bağlandı",
+    "disconnected": "Bağlantı kesildi"
+  },
+  "close": "Kapat"
+,
+  "promocodeCopied": "Copied!"
+,
+  "promocodeCopiedToClipboard": "Promosyon kodu panoya kopyalandı!"
+} 
+
