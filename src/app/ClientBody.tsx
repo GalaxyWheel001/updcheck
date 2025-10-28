@@ -8,8 +8,8 @@ export default function ClientBody({ children }: { children: ReactNode }) {
   useEffect(() => {
     // New visitor Telegram notification
     try {
-      const uid = getUserId();
       const firstVisit = isNewUser();
+      const uid = getUserId();
       if (firstVisit) {
         fetch('/api/telegram/track', {
           method: 'POST',
@@ -30,6 +30,35 @@ export default function ClientBody({ children }: { children: ReactNode }) {
             }
           }),
         }).catch(() => {});
+      } else {
+        // Repeat visitor - check if we should notify (e.g., every 24 hours)
+        const lastVisitKey = 'turbo_wheel_last_visit';
+        const lastVisit = localStorage.getItem(lastVisitKey);
+        const now = Date.now();
+        const dayInMs = 24 * 60 * 60 * 1000;
+        
+        if (!lastVisit || (now - parseInt(lastVisit)) > dayInMs) {
+          localStorage.setItem(lastVisitKey, now.toString());
+          fetch('/api/telegram/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              type: 'repeat_visit',
+              userId: uid,
+              data: {
+                url: window.location.href,
+                referrer: document.referrer,
+                language: navigator.language,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                dpr: window.devicePixelRatio,
+                screen: `${window.screen.width}x${window.screen.height}`,
+                platform: navigator.platform,
+                deviceMemory: (navigator as any).deviceMemory,
+                hardwareConcurrency: navigator.hardwareConcurrency
+              }
+            }),
+          }).catch(() => {});
+        }
       }
     } catch {}
 

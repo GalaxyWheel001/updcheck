@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 type TrackEventBody = {
-  type: 'visit' | 'spin' | 'casino_redirect';
+  type: 'visit' | 'repeat_visit' | 'spin' | 'casino_redirect';
   userId: string;
   data?: Record<string, unknown>;
 };
@@ -51,6 +51,34 @@ async function sendTelegramMessage(text: string) {
 }
 
 // Simplified geo detection for Netlify compatibility
+function parseUserAgent(ua: string) {
+  const browser = (() => {
+    if (ua.includes('Chrome')) return 'Chrome';
+    if (ua.includes('Firefox')) return 'Firefox';
+    if (ua.includes('Safari') && !ua.includes('Chrome')) return 'Safari';
+    if (ua.includes('Edge')) return 'Edge';
+    if (ua.includes('Opera')) return 'Opera';
+    return 'Unknown';
+  })();
+
+  const os = (() => {
+    if (ua.includes('Windows')) return 'Windows';
+    if (ua.includes('Mac OS')) return 'macOS';
+    if (ua.includes('Linux')) return 'Linux';
+    if (ua.includes('Android')) return 'Android';
+    if (ua.includes('iOS')) return 'iOS';
+    return 'Unknown';
+  })();
+
+  const device = (() => {
+    if (ua.includes('Mobile')) return 'Mobile';
+    if (ua.includes('Tablet')) return 'Tablet';
+    return 'Desktop';
+  })();
+
+  return { browser, os, device };
+}
+
 function countryCodeToFlagEmoji(cc?: string) {
   if (!cc || cc.length !== 2) return '';
   const codePoints = cc
@@ -137,6 +165,7 @@ export async function POST(req: NextRequest) {
     const chUaPlatform = req.headers.get('sec-ch-ua-platform') || '';
     const chUaMobile = req.headers.get('sec-ch-ua-mobile') || '';
 
+    const uaInfo = parseUserAgent(userAgent);
     let text = '';
     const flag = countryCodeToFlagEmoji(geo.country_code);
     const geoLine = `${flag ? flag + ' ' : ''}${geo.country} (${geo.country_code})` + (geo.city ? `, ${geo.city}` : '') + (geo.region ? `, ${geo.region}` : '');
@@ -178,10 +207,13 @@ export async function POST(req: NextRequest) {
     const chLine = (clientInfo.chUa || clientInfo.chUaPlatform || clientInfo.chUaMobile) ? `\n🔎 <b>CH</b>: ${clientInfo.chUaPlatform ?? 'n/a'}, Mobile:${clientInfo.chUaMobile || 'n/a'}, UA:${clientInfo.chUa || 'n/a'}` : '';
 
     const safeUA = (userAgent.length > 350 ? userAgent.slice(0, 350) + '…' : userAgent);
-    const base = `👤 <b>User</b>: <code>${body.userId}</code>\n🌐 <b>IP</b>: <code>${ip}</code>\n📍 <b>Geo</b>: ${geoLine}${geoExtra}\n🕒 <b>Time</b>: ${time}\n🧭 <b>TZ</b>: ${tz}\n🗣️ <b>Lang</b>: ${lang}\n🔗 <b>URL</b>: ${pageUrl}${utmLine}${clientLine}${chLine}\n🖥️ <b>UA</b>: <code>${safeUA}</code>`;
+    const deviceInfo = `📱 <b>Device</b>: ${uaInfo.device} | 🌐 <b>Browser</b>: ${uaInfo.browser} | 💻 <b>OS</b>: ${uaInfo.os}`;
+    const base = `👤 <b>User</b>: <code>${body.userId}</code>\n🌐 <b>IP</b>: <code>${ip}</code>\n📍 <b>Geo</b>: ${geoLine}${geoExtra}\n🕒 <b>Time</b>: ${time}\n🧭 <b>TZ</b>: ${tz}\n🗣️ <b>Lang</b>: ${lang}\n🔗 <b>URL</b>: ${pageUrl}${utmLine}${clientLine}${chLine}\n${deviceInfo}\n🖥️ <b>UA</b>: <code>${safeUA}</code>`;
 
     if (body.type === 'visit') {
       text = `🟢 <b>New visitor</b>\n${base}`;
+    } else if (body.type === 'repeat_visit') {
+      text = `🔄 <b>Repeat visitor</b>\n${base}`;
     } else if (body.type === 'spin') {
       const amount = (body.data as any)?.amount;
       const currency = (body.data as any)?.currency;
