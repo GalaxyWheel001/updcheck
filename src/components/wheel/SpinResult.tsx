@@ -8,7 +8,6 @@ import { getUserId } from '@/utils/userId';
 import type { SpinResult } from '@/types';
 import { useState, useEffect } from 'react';
 import { trackCasinoRedirect } from '@/utils/metaPixel';
-import { getUserId } from '@/utils/userId';
 
 export interface SpinResultProps {
   result: SpinResult;
