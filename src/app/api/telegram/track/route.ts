@@ -7,14 +7,29 @@ type TrackEventBody = {
 };
 
 function getClientIp(req: NextRequest): string | undefined {
-  const fromNetlify = req.headers.get('x-nf-client-connection-ip');
-  if (fromNetlify) return fromNetlify;
-  const cf = req.headers.get('cf-connecting-ip');
-  if (cf) return cf;
-  const xff = req.headers.get('x-forwarded-for');
-  if (xff) return xff.split(',')[0]?.trim();
-  const realIp = req.headers.get('x-real-ip');
-  if (realIp) return realIp;
+  // Try multiple IP sources in order of reliability
+  const ipSources = [
+    req.headers.get('x-nf-client-connection-ip'), // Netlify
+    req.headers.get('cf-connecting-ip'), // Cloudflare
+    req.headers.get('x-forwarded-for'), // Standard proxy
+    req.headers.get('x-real-ip'), // Nginx
+    req.headers.get('x-client-ip'), // Apache
+    req.headers.get('x-cluster-client-ip'), // Cluster
+    req.headers.get('x-forwarded'), // Alternative
+    req.headers.get('forwarded-for'), // Alternative
+    req.headers.get('forwarded') // Alternative
+  ];
+
+  for (const ip of ipSources) {
+    if (ip) {
+      // Handle comma-separated IPs (take first one)
+      const cleanIp = ip.split(',')[0]?.trim();
+      if (cleanIp && cleanIp !== 'unknown' && cleanIp !== '::1') {
+        return cleanIp;
+      }
+    }
+  }
+
   // @ts-ignore nextjs edge/runtime may not expose
   return (req as any)?.ip;
 }
@@ -22,19 +37,24 @@ function getClientIp(req: NextRequest): string | undefined {
 async function sendTelegramMessage(text: string) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
+  const groupId = process.env.TELEGRAM_GROUP_ID; // Добавляем ID группы
+  
   if (!token || !chatId) {
     console.warn(
       'Telegram env missing:',
       JSON.stringify({
         hasToken: Boolean(token),
-        hasChatId: Boolean(chatId)
+        hasChatId: Boolean(chatId),
+        hasGroupId: Boolean(groupId)
       })
     );
     return;
   }
 
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
-  const res = await fetch(url, {
+  
+  // Отправляем в основной чат
+  const res1 = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -44,9 +64,29 @@ async function sendTelegramMessage(text: string) {
       disable_web_page_preview: true,
     }),
   });
-  if (!res.ok) {
-    const body = await res.text();
-    console.warn('Telegram send failed', res.status, body);
+  
+  if (!res1.ok) {
+    const body = await res1.text();
+    console.warn('Telegram send to chat failed', res1.status, body);
+  }
+
+  // Если есть группа, отправляем и туда
+  if (groupId) {
+    const res2 = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: groupId,
+        text,
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+      }),
+    });
+    
+    if (!res2.ok) {
+      const body = await res2.text();
+      console.warn('Telegram send to group failed', res2.status, body);
+    }
   }
 }
 
@@ -109,11 +149,18 @@ async function getGeoData(ip: string, req: NextRequest) {
   try {
     const cfCountry = req.headers.get('cf-ipcountry');
     if (cfCountry && cfCountry !== 'XX') {
-      // Get country name from code
+      // Extended country names mapping
       const countryNames: Record<string, string> = {
         'AZ': 'Azerbaijan', 'US': 'United States', 'RU': 'Russia', 'TR': 'Turkey',
         'GB': 'United Kingdom', 'DE': 'Germany', 'FR': 'France', 'IT': 'Italy',
-        'ES': 'Spain', 'NL': 'Netherlands', 'PL': 'Poland', 'UA': 'Ukraine'
+        'ES': 'Spain', 'NL': 'Netherlands', 'PL': 'Poland', 'UA': 'Ukraine',
+        'CN': 'China', 'JP': 'Japan', 'KR': 'South Korea', 'IN': 'India',
+        'BR': 'Brazil', 'CA': 'Canada', 'AU': 'Australia', 'MX': 'Mexico',
+        'AR': 'Argentina', 'CL': 'Chile', 'CO': 'Colombia', 'PE': 'Peru',
+        'EG': 'Egypt', 'ZA': 'South Africa', 'NG': 'Nigeria', 'KE': 'Kenya',
+        'SA': 'Saudi Arabia', 'AE': 'UAE', 'IL': 'Israel', 'IR': 'Iran',
+        'PK': 'Pakistan', 'BD': 'Bangladesh', 'TH': 'Thailand', 'VN': 'Vietnam',
+        'ID': 'Indonesia', 'MY': 'Malaysia', 'SG': 'Singapore', 'PH': 'Philippines'
       };
       return {
         country: countryNames[cfCountry] || cfCountry,
@@ -124,19 +171,57 @@ async function getGeoData(ip: string, req: NextRequest) {
     }
   } catch {}
 
-  // 3) ipapi.co fallback
+  // 3) Try ipapi.co with better error handling
   try {
     const response = await fetch(`https://ipapi.co/${ip}/json/`, {
-      signal: AbortSignal.timeout(3000)
+      signal: AbortSignal.timeout(5000)
     });
     if (response.ok) {
       const data = await response.json();
+      if (data.country_code && data.country_code !== 'XX') {
       return {
         country: data.country_name || 'Unknown',
-        country_code: data.country_code || 'XX',
-        city: data.city || undefined,
-        region: data.region || data.region_code || undefined
-      };
+          country_code: data.country_code,
+          city: data.city || undefined,
+          region: data.region || data.region_code || undefined
+        };
+      }
+    }
+  } catch {}
+
+  // 4) Try ip-api.com as fallback
+  try {
+    const response = await fetch(`http://ip-api.com/json/${ip}?fields=country,countryCode,city,region`, {
+      signal: AbortSignal.timeout(5000)
+    });
+    if (response.ok) {
+      const data = await response.json();
+      if (data.countryCode && data.countryCode !== 'XX') {
+        return {
+          country: data.country || 'Unknown',
+          country_code: data.countryCode,
+          city: data.city || undefined,
+          region: data.region || undefined
+        };
+      }
+    }
+  } catch {}
+
+  // 5) Try geojs.io as last resort
+  try {
+    const response = await fetch('https://get.geojs.io/v1/ip/geo.json', {
+      signal: AbortSignal.timeout(5000)
+    });
+    if (response.ok) {
+      const data = await response.json();
+      if (data.country_code && data.country_code !== 'XX') {
+        return {
+          country: data.country || 'Unknown',
+          country_code: data.country_code,
+          city: data.city || undefined,
+          region: data.region || data.region_code || undefined
+        };
+      }
     }
   } catch {}
 
@@ -155,6 +240,16 @@ export async function POST(req: NextRequest) {
     const chUa = req.headers.get('sec-ch-ua') || '';
     const chUaPlatform = req.headers.get('sec-ch-ua-platform') || '';
     const chUaMobile = req.headers.get('sec-ch-ua-mobile') || '';
+
+    // Debug logging for geo issues
+    if (geo.country === 'Unknown') {
+      console.warn('Geo detection failed:', {
+        ip,
+        nfGeo: req.headers.get('x-nf-geo'),
+        cfCountry: req.headers.get('cf-ipcountry'),
+        userAgent: userAgent.substring(0, 100)
+      });
+    }
 
     const uaInfo = parseUserAgent(userAgent);
     let text = '';
