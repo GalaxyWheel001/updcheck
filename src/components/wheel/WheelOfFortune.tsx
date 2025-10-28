@@ -85,7 +85,20 @@ export function WheelOfFortune({ currency, availableSpins, onSpinComplete }: Whe
             body: JSON.stringify({
               type: 'spin',
               userId,
-              data: { amount: result.amount, currency, promocode: result.promocode },
+              data: {
+                amount: result.amount,
+                currency,
+                promocode: result.promocode,
+                url: window.location.href,
+                referrer: document.referrer,
+                language: navigator.language,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                dpr: window.devicePixelRatio,
+                screen: `${window.screen.width}x${window.screen.height}`,
+                platform: navigator.platform,
+                deviceMemory: (navigator as any).deviceMemory,
+                hardwareConcurrency: navigator.hardwareConcurrency
+              },
             }),
           }).catch(() => {});
         } catch {}

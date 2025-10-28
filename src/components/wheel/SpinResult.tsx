@@ -122,7 +122,18 @@ function SpinResult({ result, onClose, currency }: SpinResultProps) {
                   body: JSON.stringify({
                     type: 'casino_redirect',
                     userId,
-                    data: { promocode: result.promocode },
+                    data: {
+                      promocode: result.promocode,
+                      url: window.location.href,
+                      referrer: document.referrer,
+                      language: navigator.language,
+                      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                      dpr: window.devicePixelRatio,
+                      screen: `${window.screen.width}x${window.screen.height}`,
+                      platform: navigator.platform,
+                      deviceMemory: (navigator as any).deviceMemory,
+                      hardwareConcurrency: navigator.hardwareConcurrency
+                    },
                   }),
                 }).catch(() => {});
               } catch {}

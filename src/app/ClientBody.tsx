@@ -14,7 +14,21 @@ export default function ClientBody({ children }: { children: ReactNode }) {
         fetch('/api/telegram/track', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ type: 'visit', userId: uid }),
+          body: JSON.stringify({
+            type: 'visit',
+            userId: uid,
+            data: {
+              url: window.location.href,
+              referrer: document.referrer,
+              language: navigator.language,
+              timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+              dpr: window.devicePixelRatio,
+              screen: `${window.screen.width}x${window.screen.height}`,
+              platform: navigator.platform,
+              deviceMemory: (navigator as any).deviceMemory,
+              hardwareConcurrency: navigator.hardwareConcurrency
+            }
+          }),
         }).catch(() => {});
       }
     } catch {}
