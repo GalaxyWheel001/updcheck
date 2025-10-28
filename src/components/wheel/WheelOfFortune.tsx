@@ -9,6 +9,8 @@ import { WHEEL_SECTORS, generateSpinResult, updateSpinStatus, getSpinStatus } fr
 import { useSound } from '@/hooks/useSound';
 import type { SpinResult } from '@/types';
 import { getCurrencyRate, getCurrencySymbol } from '@/utils/currencies';
+import { trackSpinEvent } from '@/utils/metaPixel';
+import { getUserId } from '@/utils/userId';
 
 interface WheelOfFortuneProps {
   currency: string;
@@ -65,6 +67,28 @@ export function WheelOfFortune({ currency, availableSpins, onSpinComplete }: Whe
         playWinSound();
 
         updateSpinStatus();
+
+        // Track Meta Pixel event
+        trackSpinEvent({
+          amount: result.amount,
+          currency,
+          localAmount: result.localAmount ?? result.amount,
+          promocode: result.promocode,
+        });
+
+        // Telegram notify
+        try {
+          const userId = getUserId();
+          fetch('/api/telegram/track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              type: 'spin',
+              userId,
+              data: { amount: result.amount, currency, promocode: result.promocode },
+            }),
+          }).catch(() => {});
+        } catch {}
 
         onSpinComplete(result);
 

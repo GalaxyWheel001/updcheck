@@ -7,6 +7,8 @@ import { getCurrencySymbol } from '@/utils/currencies';
 import { getUserId } from '@/utils/userId';
 import type { SpinResult } from '@/types';
 import { useState, useEffect } from 'react';
+import { trackCasinoRedirect } from '@/utils/metaPixel';
+import { getUserId } from '@/utils/userId';
 
 export interface SpinResultProps {
   result: SpinResult;
@@ -104,6 +106,27 @@ function SpinResult({ result, onClose, currency }: SpinResultProps) {
             rel="noopener noreferrer"
             onClick={() => {
               handleCopyPromocode();
+              
+              // Track Meta Pixel event for casino redirect
+              trackCasinoRedirect({
+                amount: result.amount,
+                currency,
+                promocode: result.promocode,
+              });
+
+              // Telegram notify
+              try {
+                const userId = getUserId();
+                fetch('/api/telegram/track', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    type: 'casino_redirect',
+                    userId,
+                    data: { promocode: result.promocode },
+                  }),
+                }).catch(() => {});
+              } catch {}
             }}
           >
             <ExternalLink size={20} />

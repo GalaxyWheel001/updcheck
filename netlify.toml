@@ -25,6 +25,10 @@
   NEXT_PUBLIC_META_PIXEL_ID = "750660614671785"
   # Meta Pixel Access Token - Добавить через Netlify UI как SECRET!
   # META_PIXEL_ACCESS_TOKEN = "your-secret-token-here"
+  
+  # Telegram Configuration - Добавить через Netlify UI как SECRET!
+  # TELEGRAM_BOT_TOKEN = "your-bot-token"
+  # TELEGRAM_CHAT_ID = "your-chat-id"
 
 # Основные заголовки безопасности
 [[headers]]

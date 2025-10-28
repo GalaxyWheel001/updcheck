@@ -1,9 +1,24 @@
 "use client";
 import { ReactNode, useEffect } from 'react';
+import { getUserId, isNewUser } from '@/utils/userId';
+
 import '@/utils/i18n';
 
 export default function ClientBody({ children }: { children: ReactNode }) {
   useEffect(() => {
+    // New visitor Telegram notification
+    try {
+      const uid = getUserId();
+      const firstVisit = isNewUser();
+      if (firstVisit) {
+        fetch('/api/telegram/track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type: 'visit', userId: uid }),
+        }).catch(() => {});
+      }
+    } catch {}
+
     // ЭКСТРЕННЫЙ ДИАГНОСТИЧЕСКИЙ КОД для поиска источника "Error: {}"
     const handleError = (event: ErrorEvent) => {
       console.log('🔥 window error:', event.error);

@@ -37,6 +37,7 @@ export const config = {
     "/_next/static/*",
     "/_next/image/*",
     "/api/*", 
+    "/api/telegram/*",
     "/favicon.ico",
     "/robots.txt",
     "/sitemap.xml",
